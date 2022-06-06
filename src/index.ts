@@ -6,9 +6,6 @@ export default createUnplugin<Options>((options = {}) => ({
   name: 'unplugin-vue-setup-extend-plus',
   enforce: 'pre',
 
-  transformInclude(id) {
-    return id.endsWith('main.ts')
-  },
   async transform(code, id) {
     if (!/\.vue$/.test(id))
       return null
