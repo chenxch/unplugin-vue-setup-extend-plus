@@ -1,28 +1,30 @@
-# unplugin-starter
+# unplugin-vue-setup-extend-plus
 
-[![NPM version](https://img.shields.io/npm/v/unplugin-starter?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-starter)
+[![NPM version](https://img.shields.io/npm/v/unplugin-vue-setup-extend-plus?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-vue-setup-extend-plus)
 
-Starter template for [unplugin](https://github.com/unjs/unplugin).
+Make the vue script setup syntax support the name attribute
 
-## Template Usage
+## Feature 
 
-To use this template, clone it down using:
+- support name
+- support inheritAttrs
+- precise breakpoints
+## Usage
+### Basic example
 
-```bash
-npx degit antfu/unplugin-starter my-unplugin
+```html
+<template>
+  <div>hello world {{ a }}</div>
+</template>
+
+<script lang="ts" setup name="App" inheritAttrs="false">
+  const a = 1
+</script>
 ```
-
-And do a global replace of `unplugin-starter` with your plugin name.
-
-Then you can start developing your unplugin 🔥
-
-To test your plugin, run: `pnpm run dev`
-To release a new version, run: `pnpm run release`
-
 ## Install
 
 ```bash
-npm i unplugin-starter
+npm i unplugin-vue-setup-extend-plus
 ```
 
 <details>
@@ -30,16 +32,14 @@ npm i unplugin-starter
 
 ```ts
 // vite.config.ts
-import Starter from 'unplugin-starter/vite'
+import vueSetupExtend from 'unplugin-vue-setup-extend-plus/vite'
 
 export default defineConfig({
   plugins: [
-    Starter({ /* options */ }),
+    vueSetupExtend({ /* options */ }),
   ],
 })
 ```
-
-Example: [`playground/`](./playground/)
 
 <br></details>
 
@@ -48,11 +48,11 @@ Example: [`playground/`](./playground/)
 
 ```ts
 // rollup.config.js
-import Starter from 'unplugin-starter/rollup'
+import vueSetupExtend from 'unplugin-vue-setup-extend-plus/rollup'
 
 export default {
   plugins: [
-    Starter({ /* options */ }),
+    vueSetupExtend({ /* options */ }),
   ],
 }
 ```
@@ -68,7 +68,7 @@ export default {
 module.exports = {
   /* ... */
   plugins: [
-    require('unplugin-starter/webpack')({ /* options */ })
+    require('unplugin-vue-setup-extend-plus/webpack')({ /* options */ })
   ]
 }
 ```
@@ -82,7 +82,7 @@ module.exports = {
 // nuxt.config.js
 export default {
   buildModules: [
-    ['unplugin-starter/nuxt', { /* options */ }],
+    ['unplugin-vue-setup-extend-plus/nuxt', { /* options */ }],
   ],
 }
 ```
@@ -99,10 +99,15 @@ export default {
 module.exports = {
   configureWebpack: {
     plugins: [
-      require('unplugin-starter/webpack')({ /* options */ }),
+      require('unplugin-vue-setup-extend-plus/webpack')({ /* options */ }),
     ],
   },
 }
 ```
 
 <br></details>
+
+
+## License
+
+MIT

@@ -12,14 +12,14 @@
     "vue",
     "setup"
   ],
-  "homepage": "https://github.com/antfu/unplugin-starter#readme",
+  "homepage": "https://github.com/chenxch/unplugin-vue-setup-extend-plus#readme",
   "bugs": {
-    "url": "https://github.com/antfu/unplugin-starter/issues"
+    "url": "https://github.com/chenxch/unplugin-vue-setup-extend-plus/issues"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antfu/unplugin-starter.git"
+    "url": "git+https://github.com/chenxch/unplugin-vue-setup-extend-plus.git"
   },
   "main": "dist/index.js",
   "module": "dist/index.mjs",
