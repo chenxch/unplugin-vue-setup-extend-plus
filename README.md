@@ -4,7 +4,7 @@
 
 Make the vue script setup syntax support the name attribute
 
-CHANGELOG
+## CHANGELOG
 [0.2.0]
 - Automatically convert based on name and inheritAttrs
 ## Feature 
