@@ -3,5 +3,5 @@ import com from './src/index.vue'
 </script>
 
 <template>
-  <com />
+  <com style="height:80px" />
 </template>
