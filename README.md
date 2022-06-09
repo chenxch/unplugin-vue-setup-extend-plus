@@ -4,6 +4,9 @@
 
 Make the vue script setup syntax support the name attribute
 
+CHANGELOG
+[0.2.0]
+- Automatically convert based on name and inheritAttrs
 ## Feature 
 
 - support name
@@ -107,6 +110,7 @@ module.exports = {
 
 <br></details>
 
+## Expansion based on [vite-plugin-vue-setup-extend](https://github.com/vbenjs/vite-plugin-vue-setup-extend)
 
 ## License
 
