@@ -1,7 +1,8 @@
-// export interface Options {
-//   /**
-//    * Turn on name extension
-//    * @default true
-//    */
-//   name?: boolean
-// }
+export interface Options {
+  /**
+   * Turn on name extension
+   * @default true
+   */
+  // name?: boolean
+  // inheritAttrs?: boolean
+}
