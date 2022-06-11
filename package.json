@@ -3,6 +3,7 @@
   "version": "0.2.2",
   "packageManager": "pnpm@7.1.1",
   "description": "Extending the vue script setup syntactic sugar",
+  "author": "chenxch <124118265@qq.com>",
   "keywords": [
     "unplugin",
     "vite",
