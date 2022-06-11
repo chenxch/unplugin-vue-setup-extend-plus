@@ -5,7 +5,7 @@
 Make the vue script setup syntax support the name attribute
 
 ## CHANGELOG
-[0.2.3]
+[0.2.4]
 - Fix cjs exports
 
 ## CHANGELOG
