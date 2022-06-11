@@ -5,6 +5,10 @@
 Make the vue script setup syntax support the name attribute
 
 ## CHANGELOG
+[0.2.3]
+- Fix cjs exports
+
+## CHANGELOG
 [0.2.1]
 - Fix webpack require error. [#1](https://github.com/chenxch/unplugin-vue-setup-extend-plus/issues/1)
 
