@@ -5,6 +5,9 @@
 Make the vue script setup syntax support the name attribute
 
 ## CHANGELOG
+[0.2.1]
+- Fix webpack require error. [#1](https://github.com/chenxch/unplugin-vue-setup-extend-plus/issues/1)
+
 [0.2.0]
 - Automatically convert based on name and inheritAttrs
 ## Feature 
@@ -71,7 +74,8 @@ export default {
 module.exports = {
   /* ... */
   plugins: [
-    require('unplugin-vue-setup-extend-plus/webpack')({ /* options */ })
+    // require('unplugin-vue-setup-extend-plus/webpack')({ /* options */ })
+    require('unplugin-vue-setup-extend-plus/webpack').default({ /* options */ })
   ]
 }
 ```
@@ -102,7 +106,8 @@ export default {
 module.exports = {
   configureWebpack: {
     plugins: [
-      require('unplugin-vue-setup-extend-plus/webpack')({ /* options */ }),
+      // require('unplugin-vue-setup-extend-plus/webpack').({ /* options */ }),
+      require('unplugin-vue-setup-extend-plus/webpack').default({ /* options */ })
     ],
   },
 }
