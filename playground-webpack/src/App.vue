@@ -1,4 +1,4 @@
-<script lang="ts" setup name="customApp">
+<script setup name="customApp">
 import Comp from './components/comp.vue'
 console.log(123)
 </script>
