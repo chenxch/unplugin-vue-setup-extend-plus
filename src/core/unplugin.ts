@@ -10,9 +10,8 @@ export default createUnplugin(() => ({
   },
 
   async transform(code, id) {
-    if (!/\.vue$/.test(id))
-      return null
-
-    return supportScriptName.call(this, code, id)
+    if (/\.vue$/.test(id) || /\.vue\?.*type=script.*/.test(id))
+      return supportScriptName.call(this, code, id)
+    return null
   },
 }))

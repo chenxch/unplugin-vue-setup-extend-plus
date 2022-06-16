@@ -5,6 +5,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
+    "unplugin-vue-setup-extend-plus": "workspace:0.2.5",
     "vite": "^2.9.9",
     "vite-plugin-inspect": "^0.5.0"
   },

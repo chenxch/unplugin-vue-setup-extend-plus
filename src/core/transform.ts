@@ -1,9 +1,9 @@
+import { basename } from 'path'
 import { compileScript, parse } from '@vue/compiler-sfc'
 import MagicString from 'magic-string'
 
 export function supportScriptName(code: string, id: string) {
   let s: MagicString | undefined
-  const FILENAME_RE = /.*\/(\S*)/
   const str = () => s || (s = new MagicString(code))
   const { descriptor } = parse(code)
   if (!descriptor.script && descriptor.scriptSetup) {
@@ -25,7 +25,7 @@ export default defineComponent({
     }
 
     const map = str().generateMap({ hires: true })
-    const filename = FILENAME_RE.exec(id)![1]
+    const filename = basename(id)
 
     map.file = filename
     map.sources = [filename]
