@@ -5,6 +5,12 @@
 Make the vue script setup syntax support the name attribute
 
 ## CHANGELOG
+
+[0.3.0]
+- Feature
+- Expanded the function of automatic name generation
+`For details, refer to Options and extendIgnore`
+
 [0.2.5]
 - Fix cjs exports
 
@@ -36,6 +42,48 @@ Make the vue script setup syntax support the name attribute
 ```bash
 npm i unplugin-vue-setup-extend-plus
 ```
+
+## Options
+
+```ts
+vueSetupExtend({
+  // Advanced mode for name, not necessary
+  mode?: 'none' | 'fileName' | 'relativeName' | Function
+  // none: Cancel the setting of name.
+  //       e.g.
+  //       <script setup name="CustomName"> 'CustomName' will be ignored
+  // fileName: Automatically read file names
+  //       e.g.
+  //       /user/demo/src/user/login.vue  => Login
+  // relativeName: Automatically read relative path names
+  //       e.g.
+  //       /user/demo/src/user/login.vue  => UserLogin
+  // Function: support a custom function
+  // (fileId: string) => {
+  //    let name = ''
+  //    ...
+  //    return name
+  // }
+  //  fileId e.g. /user/demo/src/user/login.vue
+})
+
+```
+
+## extendIgnore
+
+`Since the user may define the name attribute of the component in the script tag, this conflicts with the default name set by this plugin. So you need to add a switch attribute to the script setup.`
+
+```html
+<template>
+  <div>hello world {{ a }}</div>
+</template>
+
+// name="App" will be invalid
+<script lang="ts" setup name="App" inheritAttrs="false" extendIgnore>
+  const a = 1
+</script>
+```
+
 
 <details>
 <summary>Vite</summary><br>
