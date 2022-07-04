@@ -43,7 +43,7 @@ export default defineComponent({
 }
 
 function nameProcess(id: string, mode: Options['mode']) {
-  const commonId = id.replaceAll('\\', '/').split('?')[0]
+  const commonId = id.replace(/\\/g, '/').split('?')[0]
   if (typeof mode === 'string') {
     const parseUrl = pathParse(commonId)
     const fileName = parseUrl.name
