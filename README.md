@@ -6,8 +6,11 @@ Make the vue script setup syntax support the name attribute
 
 ## CHANGELOG
 
+[0.3.1]
+- Fix legacy node `replaceAll`[#5](https://github.com/chenxch/unplugin-vue-setup-extend-plus/issues/5)
+
 [0.3.0]
-- Feature
+- Feature[#4](https://github.com/chenxch/unplugin-vue-setup-extend-plus/issues/4)
 - Expanded the function of automatic name generation
 `For details, refer to Options and extendIgnore`
 
