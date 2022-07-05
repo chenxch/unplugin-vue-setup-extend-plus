@@ -48,8 +48,8 @@ function nameProcess(id: string, mode: Options['mode']) {
     const parseUrl = pathParse(commonId)
     const fileName = parseUrl.name
     const relativeName = parseUrl.dir.split('/').at(-1)
-    if (mode === 'fileName')
-      return camelize(fileName)
+    // if (mode === 'fileName')
+    //   return camelize(fileName)
 
     if (mode === 'relativeName')
       return camelize(`${relativeName}-${fileName}`)
