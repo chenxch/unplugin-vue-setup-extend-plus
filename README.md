@@ -47,13 +47,10 @@ npm i unplugin-vue-setup-extend-plus
 ```ts
 vueSetupExtend({
   // Advanced mode for name, not necessary
-  mode?: 'none' | 'fileName' | 'relativeName' | Function
+  mode?: 'none' | 'relativeName' | Function
   // none: Cancel the setting of name.
   //       e.g.
   //       <script setup name="CustomName"> 'CustomName' will be ignored
-  // fileName: Automatically read file names
-  //       e.g.
-  //       /user/demo/src/user/login.vue  => Login
   // relativeName: Automatically read relative path names
   //       e.g.
   //       /user/demo/src/user/login.vue  => UserLogin
