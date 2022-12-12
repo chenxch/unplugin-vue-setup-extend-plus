@@ -1,5 +1,12 @@
 ## Changelog
 
+[0.3.3]
+- Feature: suppot vite@3
+
+[0.3.2]
+- Fix: use more specific function types[#6](https://github.com/chenxch/unplugin-vue-setup-extend-plus/issues/6)
+- Remove `fileName` mode (Because its performance is consistent with the performance of Vue itself, it is a repetitive thing.)
+
 [0.3.1]
 - Fix legacy node `replaceAll`[#5](https://github.com/chenxch/unplugin-vue-setup-extend-plus/issues/5)
 
