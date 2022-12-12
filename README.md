@@ -7,7 +7,7 @@ Make the vue script setup syntax support the name attribute
 ## CHANGELOG
 
 [0.4.0]
-- Feature: suppot vite@3
+- Feature: suppot vite@4
 
 [0.3.2]
 - Fix: use more specific function types[#6](https://github.com/chenxch/unplugin-vue-setup-extend-plus/issues/6)
