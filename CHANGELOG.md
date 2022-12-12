@@ -1,6 +1,6 @@
 ## Changelog
 
-[0.3.3]
+[0.4.0]
 - Feature: suppot vite@3
 
 [0.3.2]
