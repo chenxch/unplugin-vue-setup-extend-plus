@@ -1,6 +1,6 @@
 {
   "name": "unplugin-vue-setup-extend-plus",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "packageManager": "pnpm@7.1.1",
   "description": "Extending the vue script setup syntactic sugar",
   "author": "chenxch <124118265@qq.com>",
