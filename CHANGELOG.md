@@ -1,9 +1,9 @@
 ## Changelog
 
-[0.4.2]
+[0.4.3]
 - Fix: types
 
-[0.4.0]
+[0.4.1]
 - Feature: suppot vite@4
 
 [0.3.2]
