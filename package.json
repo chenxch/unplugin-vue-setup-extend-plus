@@ -68,7 +68,7 @@
   "dependencies": {
     "@vue/compiler-sfc": "^3.2.37",
     "magic-string": "^0.26.2",
-    "unplugin": "^1.0.0"
+    "unplugin": "^1.0.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.23.1",

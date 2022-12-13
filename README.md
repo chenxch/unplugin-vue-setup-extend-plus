@@ -6,6 +6,9 @@ Make the vue script setup syntax support the name attribute
 
 ## CHANGELOG
 
+[0.4.2]
+- Fix: types
+
 [0.4.0]
 - Feature: suppot vite@4
 
