@@ -58,12 +58,20 @@
     },
     "./*": "./*"
   },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./*"
+      ]
+    }
+  },
   "files": [
-    "dist",
-    "*.d.ts"
+    "dist"
   ],
   "scripts": {
-    "build": "rm -fr dist && tsup && esno scripts/postbuild.ts",
+    "build": "tsup",
+    "build:fix": "esno scripts/postbuild.ts",
     "dev": "tsup --watch src",
     "lint": "eslint .",
     "play": "npm -C playground run dev",
@@ -86,7 +94,7 @@
     "nodemon": "^2.0.16",
     "rimraf": "^3.0.2",
     "rollup": "^2.74.0",
-    "tsup": "^5.12.8",
+    "tsup": "^6.5.0",
     "typescript": "^4.6.4",
     "vite": "^2.9.9",
     "vitest": "^0.12.6",
