@@ -61,7 +61,7 @@
     "dev": "tsup --watch src",
     "lint": "eslint .",
     "play": "npm -C playground run dev",
-    "release": "bumpp --commit --push --tag && pnpm publish",
+    "release": "bumpp --commit --push --tag && pnpm publish --registry=https://registry.npmjs.org/",
     "start": "esno src/index.ts",
     "test": "vitest"
   },
