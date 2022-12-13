@@ -27,28 +27,34 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
     },
     "./vite": {
-      "require": "./dist/vite.js",
-      "import": "./dist/vite.mjs"
+      "types": "./dist/vite.d.ts",
+      "require": "./dist/vite.cjs",
+      "import": "./dist/vite.js"
     },
     "./webpack": {
-      "require": "./dist/webpack.js",
-      "import": "./dist/webpack.mjs"
+      "types": "./dist/webpack.d.ts",
+      "require": "./dist/webpack.cjs",
+      "import": "./dist/webpack.js"
     },
     "./rollup": {
-      "require": "./dist/rollup.js",
-      "import": "./dist/rollup.mjs"
+      "types": "./dist/rollup.d.ts",
+      "require": "./dist/rollup.cjs",
+      "import": "./dist/rollup.js"
     },
-    "./nuxt": {
-      "require": "./dist/nuxt.js",
-      "import": "./dist/nuxt.mjs"
+    "./esbuild": {
+      "types": "./dist/esbuild.d.ts",
+      "require": "./dist/esbuild.cjs",
+      "import": "./dist/esbuild.js"
     },
     "./types": {
-      "require": "./dist/types.js",
-      "import": "./dist/types.mjs"
+      "types": "./dist/types.d.ts",
+      "require": "./dist/types.cjs",
+      "import": "./dist/types.js"
     },
     "./*": "./*"
   },
