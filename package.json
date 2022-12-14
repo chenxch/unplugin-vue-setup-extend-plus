@@ -1,5 +1,6 @@
 {
   "name": "unplugin-vue-setup-extend-plus",
+  "type": "module",
   "version": "0.4.4",
   "packageManager": "pnpm@7.1.1",
   "description": "Extending the vue script setup syntactic sugar",
@@ -22,8 +23,8 @@
     "type": "git",
     "url": "git+https://github.com/chenxch/unplugin-vue-setup-extend-plus.git"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
@@ -75,6 +76,7 @@
     "dev": "tsup --watch src",
     "lint": "eslint .",
     "play": "npm -C playground run dev",
+    "prepublishOnly": "npm run build",
     "release": "bumpp --commit --push --tag && pnpm publish --registry=https://registry.npmjs.org/",
     "start": "esno src/index.ts",
     "test": "vitest"

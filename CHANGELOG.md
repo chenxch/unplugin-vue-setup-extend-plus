@@ -1,5 +1,8 @@
 ## Changelog
 
+[0.4.5]
+- Fix: commonjs
+
 [0.4.4]
 - Fix: types
 
