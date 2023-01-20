@@ -128,7 +128,9 @@ export default {
 module.exports = {
   /* ... */
   plugins: [
-    require('unplugin-vue-setup-extend-plus/webpack')({ /* options */ })
+    require('unplugin-vue-setup-extend-plus/webpack').default({ /* options */ })
+    // or
+    // require('unplugin-vue-setup-extend-plus/webpack')({ /* options */ })
   ]
 }
 ```
