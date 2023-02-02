@@ -1,5 +1,8 @@
 ## Changelog
 
+[0.4.7]
+- Fix: webpack conversion script parsing lost
+
 [0.4.6]
 - Fix: webpack parsing failed resulting in process termination[#12](https://github.com/chenxch/unplugin-vue-setup-extend-plus/issues/12)
 

@@ -6,6 +6,9 @@ Make the vue script setup syntax support the name attribute
 
 ## CHANGELOG
 
+[0.4.7]
+- Fix: webpack conversion script parsing lost
+
 [0.4.6]
 - Fix: webpack parsing failed resulting in process termination[#12](https://github.com/chenxch/unplugin-vue-setup-extend-plus/issues/12)
 
@@ -18,11 +21,6 @@ Make the vue script setup syntax support the name attribute
 [0.4.1]
 - Feature: suppot vite@4
 
-[0.3.2]
-- Fix: use more specific function types[#6](https://github.com/chenxch/unplugin-vue-setup-extend-plus/issues/6)
-- Remove `fileName` mode (Because its performance is consistent with the performance of Vue itself, it is a repetitive thing.)
-
-`For details, refer to Options and extendIgnore`
 
 ## Feature 
 

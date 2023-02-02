@@ -16,13 +16,13 @@ export function supportScriptName(code: string, id: string, options: Options) {
     if (name || inheritAttrs) {
       str().appendLeft(
         0,
-        `<script ${lang ? `lang="${lang}"` : ''}>
+        `<script${lang ? ` lang="${lang}"` : ''}>
 import { defineComponent } from 'vue'
 export default defineComponent({
   ${name ? `name: "${name}",` : ''}
   ${inheritAttrs ? `inheritAttrs: ${inheritAttrs !== 'false'},` : ''}
 })
-</script>\n`,
+</script$>\n`,
       )
     }
 
