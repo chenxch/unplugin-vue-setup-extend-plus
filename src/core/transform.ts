@@ -22,7 +22,7 @@ export default defineComponent({
   ${name ? `name: "${name}",` : ''}
   ${inheritAttrs ? `inheritAttrs: ${inheritAttrs !== 'false'},` : ''}
 })
-</script$>\n`,
+</script>\n`,
       )
     }
 
