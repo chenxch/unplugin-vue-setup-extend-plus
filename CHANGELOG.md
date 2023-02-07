@@ -1,5 +1,8 @@
 ## Changelog
 
+[0.4.8]
+- Fix: script tag
+
 [0.4.7]
 - Fix: webpack conversion script parsing lost
 
