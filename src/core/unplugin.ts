@@ -8,7 +8,7 @@ export default createUnplugin((options: Options = {}, meta) => {
     enforce: 'pre',
 
     transformInclude(id) {
-      return id.endsWith('.vue')
+      return /\.vue$/.test(id) || /\.vue\?vue/.test(id)
     },
 
     async transform(code, id) {
