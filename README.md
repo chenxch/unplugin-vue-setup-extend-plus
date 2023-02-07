@@ -6,6 +6,9 @@ Make the vue script setup syntax support the name attribute
 
 ## CHANGELOG
 
+[0.4.9]
+- Fix: webpack transformInclude reg
+
 [0.4.8]
 - Fix: script tag
 

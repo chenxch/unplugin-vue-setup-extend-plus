@@ -1,5 +1,8 @@
 ## Changelog
 
+[0.4.9]
+- Fix: webpack transformInclude reg
+
 [0.4.8]
 - Fix: script tag
 
