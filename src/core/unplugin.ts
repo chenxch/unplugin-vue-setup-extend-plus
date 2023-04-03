@@ -1,6 +1,8 @@
 import { createUnplugin } from 'unplugin'
 import type { Options } from '../types'
 import { supportScriptName } from './transform'
+import { compose } from './compose'
+import { supportTransformRef } from './transformRef'
 
 export default createUnplugin((options: Options = {}, meta) => {
   return {
@@ -15,8 +17,13 @@ export default createUnplugin((options: Options = {}, meta) => {
       try {
         if (options.mode && options.mode === 'none')
           return null
-        if (/\.vue$/.test(id) || /\.vue\?.*type=script.*/.test(id))
-          return supportScriptName.call(this, code, id, options)
+        if (/\.vue$/.test(id) || /\.vue\?.*type=script.*/.test(id)) {
+          return compose({
+            code,
+            id,
+            options,
+          }, [supportTransformRef, supportScriptName])
+        } // supportScriptName.call(this, code, id, options)
         return null
       }
       catch (e) {
