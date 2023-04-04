@@ -1,7 +1,8 @@
 import { basename } from 'path'
 import type { SFCParseResult } from '@vue/compiler-sfc'
-import { MagicString, parse } from '@vue/compiler-sfc'
-// import type { SourceMap } from 'magic-string'
+import { MagicString, compileTemplate, parse } from '@vue/compiler-sfc'
+import type { SourceMap } from 'magic-string'
+import type { NodeTransform } from '@vue/compiler-core'
 import type { Options } from '../types'
 
 // SourceMap
@@ -10,16 +11,47 @@ interface PluginsOptions {
   id: string
   options: Options
 }
+interface RegisterCompile {
+  templates: NodeTransform[]
+}
 
-export type Plugin = (_SFCParseResult: SFCParseResult, magicString: MagicString, options: PluginsOptions) => void
+export type Plugin = (
+  _SFCParseResult: SFCParseResult,
+  magicString: MagicString,
+  options: PluginsOptions,
+  registerCompile: RegisterCompile
+) => void
 
-export const compose = (pluginsOption: PluginsOptions, plugins: Array<Plugin>) => {
+export const compose = (
+  pluginsOption: PluginsOptions,
+  plugins: Array<Plugin>,
+): {
+  map: SourceMap
+  code: string
+} => {
   const magicString = new MagicString(pluginsOption.code)
   const _SFCParseResult = parse(pluginsOption.code)
-  for (let index = 0; index < plugins.length; index++) {
-    const plugin = plugins[index]
-    plugin(_SFCParseResult, magicString, pluginsOption)
+  const registerCompile: RegisterCompile = {
+    templates: [],
   }
+  plugins.forEach(plugin =>
+    plugin(_SFCParseResult, magicString, pluginsOption, registerCompile),
+  )
+
+  if (registerCompile.templates.length && _SFCParseResult.descriptor) {
+    const { descriptor } = _SFCParseResult!
+    if (descriptor.template) {
+      compileTemplate({
+        filename: pluginsOption.id,
+        source: descriptor.template!.content,
+        id: pluginsOption.id,
+        compilerOptions: {
+          nodeTransforms: registerCompile.templates,
+        },
+      })
+    }
+  }
+
   const map = magicString.generateMap({ hires: true })
   const filename = basename(pluginsOption.id)
 
