@@ -1,20 +1,18 @@
-import { basename, parse as pathParse } from 'path'
-import { compileScript, parse } from '@vue/compiler-sfc'
-import MagicString from 'magic-string'
+import { parse as pathParse } from 'path'
+import { compileScript } from '@vue/compiler-sfc'
 import type { Options } from '../types'
+import type { Plugin } from './compose'
 
-export function supportScriptName(code: string, id: string, options: Options) {
-  const { mode } = options
-  let s: MagicString | undefined
-  const str = () => s || (s = new MagicString(code))
-  const { descriptor } = parse(code)
+export const supportScriptName: Plugin = (_SFCParseResult, magicString, options) => {
+  const { mode } = options.options
+  const { descriptor } = _SFCParseResult
   if (!descriptor.script && descriptor.scriptSetup && !descriptor.scriptSetup.attrs?.extendIgnore) {
-    const result = compileScript(descriptor, { id })
-    const name = typeof result.attrs.name === 'string' ? result.attrs.name : nameProcess(id, mode)
+    const result = compileScript(descriptor, { id: options.id })
+    const name = typeof result.attrs.name === 'string' ? result.attrs.name : nameProcess(options.id, mode)
     const lang = result.attrs.lang
     const inheritAttrs = result.attrs.inheritAttrs
     if (name || inheritAttrs) {
-      str().appendLeft(
+      magicString.appendLeft(
         0,
         `<script${lang ? ` lang="${lang}"` : ''}>
 import { defineComponent } from 'vue'
@@ -25,20 +23,6 @@ export default defineComponent({
 </script>\n`,
       )
     }
-
-    const map = str().generateMap({ hires: true })
-    const filename = basename(id)
-
-    map.file = filename
-    map.sources = [filename]
-
-    return {
-      map,
-      code: str().toString(),
-    }
-  }
-  else {
-    return null
   }
 }
 

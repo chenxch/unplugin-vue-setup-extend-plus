@@ -8,7 +8,9 @@ export default defineConfig({
   plugins: [
     vue(),
     // Inspect(),
-    Unplugin({}),
-    vueSetupExtend({ /* options */ }),
+    // Unplugin({}),
+    vueSetupExtend({
+      enableSupportRef: true,
+    }),
   ],
 })
