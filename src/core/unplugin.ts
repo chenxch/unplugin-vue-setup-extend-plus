@@ -22,7 +22,7 @@ export default createUnplugin((options: Options = {}, meta) => {
             code,
             id,
             options,
-          }, [supportTransformRef, supportScriptName])
+          }, options.enableAutoExpose ? [supportTransformRef, supportScriptName] : [supportScriptName])
         } // supportScriptName.call(this, code, id, options)
         return null
       }

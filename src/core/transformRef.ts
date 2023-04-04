@@ -6,7 +6,7 @@ const onVnodeBeforeMountRef = ' :onVnodeBeforeMount="onVnodeBeforeMountRef_" '
 
 export const supportTransformRef: Plugin = (_SFCParseResult, magicString, options, registerCompile) => {
   const { descriptor } = _SFCParseResult
-  if (descriptor.template && options.options.enableSupportRef) {
+  if (descriptor.template) {
     const { loc: templateLocStart } = descriptor.template
     const onRefNode: NodeTransform = (node) => {
       if (node.type === 1 /** NodeTypes.ELEMENT */) {

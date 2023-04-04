@@ -6,30 +6,16 @@ Make the vue script setup syntax support the name attribute
 
 ## CHANGELOG
 
+[1.0.0]
+- Feat: support auto expose(by [@so11y](https://github.com/so11y))
+
 [0.4.9]
 - Fix: webpack transformInclude reg
-
-[0.4.8]
-- Fix: script tag
-
-[0.4.7]
-- Fix: webpack conversion script parsing lost
-
-[0.4.6]
-- Fix: webpack parsing failed resulting in process termination[#12](https://github.com/chenxch/unplugin-vue-setup-extend-plus/issues/12)
-
-[0.4.5]
-- Fix: commonjs
-
-[0.4.4]
-- Fix: types
-
-[0.4.1]
-- Feature: suppot vite@4
 
 
 ## Feature 
 
+- 🌟support auto expose
 - support name
 - support inheritAttrs
 - precise breakpoints
@@ -60,19 +46,46 @@ vueSetupExtend({
   mode?: 'none' | 'relativeName' | Function
   // none: Cancel the setting of name.
   //       e.g.
-  //       <script setup name="CustomName"> 'CustomName' will be ignored
-  // relativeName: Automatically read relative path names
-  //       e.g.
-  //       /user/demo/src/user/login.vue  => UserLogin
-  // Function: support a custom function
-  // (fileId: string) => {
-  //    let name = ''
-  //    ...
-  //    return name
-  // }
-  //  fileId e.g. /user/demo/src/user/login.vue
+  //       <script setup name="CustomName"> 'CustomName' 
+  // support auto expose
+  enableAutoExpose?: boolean
 })
 
+```
+
+## enableAutoExpose
+
+First of all thanks to [@so11y](https://github.com/so11y) for his contribution to this feature.
+
+After using the script setup syntax, the export needs to be processed manually. When you need to export the full amount by default, just enable this property. The usage is as follows:
+
+main.ts
+```ts
+import { createApp } from 'vue'
+import autoExpose from 'unplugin-vue-setup-extend-plus/src/client/index'
+import App from './App.vue'
+
+createApp(App).use(autoExpose).mount('#app')
+```
+
+Comp.vue
+```vue
+<script setup>
+import { ref } from 'vue'
+const numb = ref(50)
+</script>
+```
+App.vue
+```vue
+<script setup>
+import { onMounted, ref } from 'vue'
+const el = ref()
+onMounted(() => { console.log(el.value.num) }) // 50
+</script>
+
+<template>
+  <Comp ref="el" />
+</template>
 ```
 
 ## extendIgnore
