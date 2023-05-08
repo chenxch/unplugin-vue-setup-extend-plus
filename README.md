@@ -93,6 +93,8 @@ onMounted(() => { console.log(el.value.num) }) // 50
 
 `Set a name for the component, similar to the name attribute in the option API notation.`
 
+[name docs](https://vuejs.org/api/options-misc.html#name)
+
 ```html
 <template>
   <div>hello world {{ a }}</div>
@@ -107,7 +109,7 @@ onMounted(() => { console.log(el.value.num) }) // 50
 
 `If you do not want a component to automatically inherit attributes, you can set inheritAttrs: false in the component's options.`
 
-[inheritAttrs docs](https://vuejs.org/guide/components/attrs.html#disabling-attribute-inheritance)
+[inheritAttrs docs](https://vuejs.org/api/options-misc.html#inheritattrs)
 
 ```html
 <template>
