@@ -87,8 +87,39 @@ onMounted(() => { console.log(el.value.num) }) // 50
   <Comp ref="el" />
 </template>
 ```
+## Script Tag Attributes
 
-## extendIgnore
+### name
+
+`Set a name for the component, similar to the name attribute in the option API notation.`
+
+```html
+<template>
+  <div>hello world {{ a }}</div>
+</template>
+
+<script lang="ts" setup name="App">
+  const a = 1
+</script>
+```
+
+### inheritAttrs
+
+`If you do not want a component to automatically inherit attributes, you can set inheritAttrs: false in the component's options.`
+
+[inheritAttrs docs](https://vuejs.org/guide/components/attrs.html#disabling-attribute-inheritance)
+
+```html
+<template>
+  <div>hello world {{ a }}</div>
+</template>
+
+<script lang="ts" setup name="App" inheritAttrs="false">
+  const a = 1
+</script>
+```
+
+### extendIgnore
 
 `Since the user may define the name attribute of the component in the script tag, this conflicts with the default name set by this plugin. So you need to add a switch attribute to the script setup.`
 
