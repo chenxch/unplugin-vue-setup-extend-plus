@@ -6,11 +6,11 @@ Make the vue script setup syntax support the name attribute
 
 ## CHANGELOG
 
+[1.0.1]
+- Fix: auto expose type
+
 [1.0.0]
 - Feat: support auto expose(by [@so11y](https://github.com/so11y))
-
-[0.4.9]
-- Fix: webpack transformInclude reg
 
 
 ## Feature 

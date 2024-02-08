@@ -1,5 +1,8 @@
 ## Changelog
 
+[1.0.1]
+- Fix: auto expose type
+
 [1.0.0]
 - Feat: support auto expose(by [@so11y](https://github.com/so11y))
 
