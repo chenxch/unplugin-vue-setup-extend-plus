@@ -62,7 +62,7 @@ After using the script setup syntax, the export needs to be processed manually. 
 main.ts
 ```ts
 import { createApp } from 'vue'
-import autoExpose from 'unplugin-vue-setup-extend-plus/src/client/index'
+import autoExpose from 'unplugin-vue-setup-extend-plus/dist/client/index'
 import App from './App.vue'
 
 createApp(App).use(autoExpose).mount('#app')
