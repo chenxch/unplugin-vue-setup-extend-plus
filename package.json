@@ -57,6 +57,11 @@
       "require": "./dist/types.cjs",
       "import": "./dist/types.js"
     },
+    "./dist/client/index": {
+      "types": "./dist/client/index.d.ts",
+      "require": "./dist/client/index.cjs",
+      "import": "./dist/client/index.js"
+    },
     "./*": "./*"
   },
   "typesVersions": {
